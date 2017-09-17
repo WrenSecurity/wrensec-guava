@@ -13,6 +13,7 @@
   information: "Portions Copyrighted [year] [name of copyright owner]".
  
   Copyright 2014 ForgeRock AS.
+  Portions Copyright 2017 Wren Security.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -25,7 +26,7 @@
     <groupId>org.forgerock.commons.guava</groupId>
     <artifactId>forgerock-guava</artifactId>
     <version>18.0.1</version>
-    <name>ForgeRock Guava</name>
+    <name>Wren Security Guava - Parent</name>
     <description>Repackaged version of Guava to avoid dependency collisions.</description>
     <modules>
         <module>all</module>
@@ -161,19 +162,24 @@
     </build>
     <!-- Maven Repositories -->
     <repositories>
-        <!-- ForgeRock Common Internal Project Repositories -->
+        <!-- Needed to retrieve parent POM -->
         <repository>
-            <id>forgerock-staging-repo</id>
-            <name>ForgeRock Release Repository</name>
-            <url>http://maven.forgerock.org/repo/releases</url>
+            <id>wrensecurity-releases</id>
+            <name>Wren Security Release Repository</name>
+            <url>https://wrensecurity.jfrog.io/wrensecurity/releases</url>
+
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+
+            <releases>
+                <enabled>true</enabled>
+            </releases>
         </repository>
     </repositories>
     <scm>
-        <connection>scm:svn:https://svn.forgerock.org/commons/forgerock-guava/trunk</connection>
-        <developerConnection>scm:svn:https://svn.forgerock.org/commons/forgerock-guava/trunk</developerConnection>
-        <url>http://sources.forgerock.org/browse/commons/forgerock-guava/trunk</url>
+        <url>https://github.com/WrenSecurity/wrensec-guava</url>
+        <connection>scm:git:git://github.com/WrenSecurity/wrensec-guava.git</connection>
+        <developerConnection>scm:git:git@github.com:WrenSecurity/wrensec-guava.git</developerConnection>
     </scm>
-</project>
+ </project>
