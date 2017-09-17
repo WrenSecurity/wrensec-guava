@@ -13,6 +13,7 @@
   information: "Portions Copyrighted [year] [name of copyright owner]".
 
   Copyright 2014-2015 ForgeRock AS.
+  Portions Copyright 2017 Wren Security.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -23,8 +24,8 @@
     </parent>
     <packaging>jar</packaging>
     <artifactId>forgerock-guava-reflect</artifactId>
-    <name>Google Guava Reflection</name>
-    <description>Repackaged version of Guava to avoid dependency collisions.</description>
+    <name>Wren Security Guava - Reflection</name>
+    <description>Provides utilities to work with Java reflection. Repackaged to avoid dependency collisions.</description>
     <dependencies>
         <dependency>
             <groupId>org.forgerock.commons.guava</groupId>
