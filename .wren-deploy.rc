@@ -5,8 +5,8 @@ export JFROG_PACKAGE="org/forgerock/guava"
 package_accept_release_tag() {
   local tag_name="${1}"
 
-  if [[ "${tag_name}" != "18.0.3" && "${tag_name}" != "18.0.4" ]]; then
-    echo "Skipping ${tag_name} since we only want to build 18.0.3 and 18.0.4 right now."
+  if [[ "${tag_name}" == "18.0" ]]; then
+    echo "Skipping ${tag_name} since we only want to build 18.0.1 through 18.0.4 right now."
     return -1
   else
     return 0
