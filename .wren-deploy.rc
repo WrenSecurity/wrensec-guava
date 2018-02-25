@@ -1,6 +1,7 @@
 export MAVEN_PACKAGE="forgerock-guava"
 export BINTRAY_PACKAGE="wrensec-guava"
 export JFROG_PACKAGE="org/forgerock/guava"
+export MVN_COMPILE_ARGS="-Dmaven.javadoc.skip=true"
 
 package_accept_release_tag() {
   local tag_name="${1}"
