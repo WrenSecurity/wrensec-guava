@@ -13,19 +13,24 @@
   information: "Portions Copyrighted [year] [name of copyright owner]".
 
   Copyright 2014-2015 ForgeRock AS.
-  Copyright 2017 Wren Security.
+  Portions Copyright 2017-2022 Wren Security.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <groupId>org.forgerock.commons.guava</groupId>
-        <artifactId>forgerock-guava</artifactId>
-        <version>18.0.4</version>
+        <groupId>org.wrensecurity.commons.guava</groupId>
+        <artifactId>wrensec-guava</artifactId>
+        <version>18.0.5-SNAPSHOT</version>
     </parent>
+
+    <artifactId>wrensec-guava-all</artifactId>
     <packaging>jar</packaging>
-    <artifactId>forgerock-guava-all</artifactId>
+
     <name>Wren Security Guava - Full Google Guava Package</name>
+
     <description>Provides the entire Google Guava package. Other packages repackage the contents of this package to avoid dependency collisions.</description>
+
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -33,6 +38,7 @@
             <version>18.0</version>
         </dependency>
     </dependencies>
+
     <build>
         <resources>
             <resource>
@@ -40,6 +46,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -62,7 +69,7 @@
                     <relocations>
                         <relocation>
                             <pattern>com.google</pattern>
-                            <shadedPattern>org.forgerock.guava</shadedPattern>
+                            <shadedPattern>org.wrensecurity.guava</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>
@@ -78,7 +85,7 @@
                             <manifestEntries>
                                 <Bundle-Version>${parsedVersion.osgiVersion}</Bundle-Version>
                                 <Import-Package>javax.annotation;resolution:=optional,sun.misc;resolution:=optional</Import-Package>
-                                <Export-Package>org.forgerock.guava.common.annotations;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.base;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.cache;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.collect;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.concurrent;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.escape;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.eventbus;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.hash;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.html;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.io;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.math;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.net;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.primitives;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.reflect;version="${parsedVersion.osgiVersion}"</Export-Package>
+                                <Export-Package>org.wrensecurity.guava.common.annotations;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.base;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.cache;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.collect;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.concurrent;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.escape;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.eventbus;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.hash;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.html;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.io;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.math;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.net;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.primitives;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.reflect;version="${parsedVersion.osgiVersion}"</Export-Package>
                             </manifestEntries>
                         </transformer>
                     </transformers>
