@@ -26,7 +26,7 @@
 
     <groupId>org.wrensecurity.commons.guava</groupId>
     <artifactId>wrensec-guava</artifactId>
-    <version>18.0.5</version>
+    <version>18.0.6-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Wren Security Guava - Parent</name>
