@@ -13,41 +13,47 @@
   information: "Portions Copyrighted [year] [name of copyright owner]".
 
   Copyright 2014-2015 ForgeRock AS.
-  Portions Copyright 2017 Wren Security.
+  Portions Copyright 2017-2022 Wren Security.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <groupId>org.forgerock.commons.guava</groupId>
-        <artifactId>forgerock-guava</artifactId>
-        <version>18.0.4</version>
+        <groupId>org.wrensecurity.commons.guava</groupId>
+        <artifactId>wrensec-guava</artifactId>
+        <version>18.0.5-SNAPSHOT</version>
     </parent>
+
+    <artifactId>wrensec-guava-reflect</artifactId>
     <packaging>jar</packaging>
-    <artifactId>forgerock-guava-reflect</artifactId>
+
     <name>Wren Security Guava - Reflection</name>
+
     <description>Provides utilities to work with Java reflection. Repackaged to avoid dependency collisions.</description>
+
     <dependencies>
         <dependency>
-            <groupId>org.forgerock.commons.guava</groupId>
-            <artifactId>forgerock-guava-all</artifactId>
+            <groupId>org.wrensecurity.commons.guava</groupId>
+            <artifactId>wrensec-guava-all</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.forgerock.commons.guava</groupId>
-            <artifactId>forgerock-guava-annotations</artifactId>
+            <groupId>org.wrensecurity.commons.guava</groupId>
+            <artifactId>wrensec-guava-annotations</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.forgerock.commons.guava</groupId>
-            <artifactId>forgerock-guava-base</artifactId>
+            <groupId>org.wrensecurity.commons.guava</groupId>
+            <artifactId>wrensec-guava-base</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.forgerock.commons.guava</groupId>
-            <artifactId>forgerock-guava-collect</artifactId>
+            <groupId>org.wrensecurity.commons.guava</groupId>
+            <artifactId>wrensec-guava-collect</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.forgerock.commons.guava</groupId>
-            <artifactId>forgerock-guava-primitives</artifactId>
+            <groupId>org.wrensecurity.commons.guava</groupId>
+            <artifactId>wrensec-guava-primitives</artifactId>
         </dependency>
     </dependencies>
+
     <build>
         <resources>
             <resource>
@@ -55,6 +61,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -74,14 +81,14 @@
                 <configuration>
                     <artifactSet>
                         <includes>
-                            <include>org.forgerock.commons.guava:forgerock-guava-all</include>
+                            <include>org.wrensecurity.commons.guava:wrensec-guava-all</include>
                         </includes>
                     </artifactSet>
                     <filters>
                         <filter>
-                            <artifact>org.forgerock.commons.guava:forgerock-guava-all</artifact>
+                            <artifact>org.wrensecurity.commons.guava:wrensec-guava-all</artifact>
                             <includes>
-                                <include>org/forgerock/guava/common/reflect/**</include>
+                                <include>org/wrensecurity/guava/common/reflect/**</include>
                             </includes>
                         </filter>
                     </filters>
@@ -89,8 +96,8 @@
                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                             <manifestEntries>
                                 <Bundle-Version>${parsedVersion.osgiVersion}</Bundle-Version>
-                                <Import-Package>javax.annotation;resolution:=optional,org.forgerock.guava.common.base;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.collect;version="${parsedVersion.osgiVersion}",org.forgerock.guava.common.primitives;version="${parsedVersion.osgiVersion}"</Import-Package>
-                                <Export-Package>org.forgerock.guava.common.reflect;version="${parsedVersion.osgiVersion}"</Export-Package>
+                                <Import-Package>javax.annotation;resolution:=optional,org.wrensecurity.guava.common.base;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.collect;version="${parsedVersion.osgiVersion}",org.wrensecurity.guava.common.primitives;version="${parsedVersion.osgiVersion}"</Import-Package>
+                                <Export-Package>org.wrensecurity.guava.common.reflect;version="${parsedVersion.osgiVersion}"</Export-Package>
                             </manifestEntries>
                         </transformer>
                     </transformers>
